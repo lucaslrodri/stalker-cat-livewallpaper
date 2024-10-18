@@ -1,4 +1,4 @@
-# StalkerCat+ Live Wallpaper
+# Stalker Cat Live Wallpaper
 
 <p align="center">
 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3350454609"
