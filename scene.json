@@ -1,0 +1,243 @@
+{
+	"camera" : 
+	{
+		"center" : "0.00000 0.00000 -1.00000",
+		"eye" : "0.00000 0.00000 0.00000",
+		"up" : "0.00000 1.00000 0.00000"
+	},
+	"general" : 
+	{
+		"ambientcolor" : "0.30196 0.30196 0.30196",
+		"bloom" : true,
+		"bloomhdrfeather" : 0.1,
+		"bloomhdriterations" : 8,
+		"bloomhdrscatter" : 1.619,
+		"bloomhdrstrength" : 2.0,
+		"bloomhdrthreshold" : 1.0,
+		"bloomstrength" : 2.0,
+		"bloomthreshold" : 0.64999998,
+		"bloomtint" : "1.00000 1.00000 1.00000",
+		"camerafade" : true,
+		"cameraparallax" : false,
+		"cameraparallaxamount" : 0.5,
+		"cameraparallaxdelay" : 0.1,
+		"cameraparallaxmouseinfluence" : 0.5,
+		"camerapreview" : true,
+		"camerashake" : false,
+		"camerashakeamplitude" : 0.5,
+		"camerashakeroughness" : 1.0,
+		"camerashakespeed" : 3.0,
+		"clearcolor" : "0.75294 0.75294 0.75294",
+		"clearenabled" : true,
+		"farz" : 10000.0,
+		"fov" : 50.0,
+		"hdr" : false,
+		"nearz" : 0.0099999998,
+		"orthogonalprojection" : 
+		{
+			"height" : 2160,
+			"width" : 3840
+		},
+		"perspectiveoverridefov" : 30.0,
+		"skylightcolor" : "0.30000 0.30000 0.30000",
+		"zoom" : 1.0
+	},
+	"objects" : 
+	[
+		{
+			"castshadow" : false,
+			"color" : 
+			{
+				"user" : "schemecolor",
+				"value" : "0.18824 0.34902 0.61176"
+			},
+			"id" : 44,
+			"image" : "models/background.json",
+			"name" : "background",
+			"origin" : "1920.00000 1080.00000 0.00000",
+			"scale" : 
+			{
+				"script" : "'use strict';\n\n// /**\n//  * @param {Vec3} value - for property 'scale'\n//  * @return {Vec3} - update current property value\n//  */\nexport function init(value) {\n\tconst canvasRatio = engine.canvasSize.x/engine.canvasSize.y;\n\tconst screenRatio = engine.screenResolution.x/engine.screenResolution.y;\n\tconst ratio = screenRatio/canvasRatio;\n\n\tif (ratio > 1){ // Landscape - x larger than canvas\n\t\tvalue.x = engine.canvasSize.x/thisObject.size.x;\n\t\tvalue.y = engine.canvasSize.y/thisObject.size.y / ratio;\n\t}else{ // x lower than canvas\n\t\tvalue.x = engine.canvasSize.x/thisObject.size.x * ratio;\n\t\tvalue.y = engine.canvasSize.y/thisObject.size.y;\n\t}\n\n\tshared.canvasSize = new Vec3(\n\t\tMath.ceil(value.x * thisLayer.size.x),\n\t\tMath.ceil(value.y * thisLayer.size.y),\n\t)\n\tshared.trigger_hide = false;\n\n\tvalue.x = shared.canvasSize.x/thisObject.size.x;\n\tvalue.y = shared.canvasSize.y/thisObject.size.y;\n\n\treturn value;\n}\n\n\n/**\n * @param {Vec3} value - for property 'scale'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tconst canvasRatio = engine.canvasSize.x/engine.canvasSize.y;\n\tconst screenRatio = engine.screenResolution.x/engine.screenResolution.y;\n\tconst ratio = screenRatio/canvasRatio;\n\n\tif (ratio > 1){ // Landscape - x larger than canvas\n\t\tvalue.x = engine.canvasSize.x/thisObject.size.x;\n\t\tvalue.y = engine.canvasSize.y/thisObject.size.y / ratio;\n\t}else{ // x lower than canvas\n\t\tvalue.x = engine.canvasSize.x/thisObject.size.x * ratio;\n\t\tvalue.y = engine.canvasSize.y/thisObject.size.y;\n\t}\n\n\tshared.canvasSize = new Vec3(\n\t\tMath.ceil(value.x * thisLayer.size.x),\n\t\tMath.ceil(value.y * thisLayer.size.y),\n\t)\n\t\n\tvalue.x = shared.canvasSize.x/thisObject.size.x;\n\tvalue.y = shared.canvasSize.y/thisObject.size.y;\n\n\treturn value;\n}\n\n/**\n * @param {CursorEvent} event\n */\nexport function cursorClick(event) {\n\tshared.trigger_hide = true;\t\n}\n",
+				"value" : "1.00000 1.00000 1.00000"
+			},
+			"size" : "5120.00000 5120.00000"
+		},
+		{
+			"alignment" : "bottom",
+			"angles" : 
+			{
+				"script" : "'use strict';\n\n/**\n * @param {Vec3} value - for property 'angles'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tswitch (shared.edge) {\n\t\tcase \"south\":\n\t\t\tvalue.z = 0;\n\t\t\tbreak;\n\t\tcase \"southeast\":\n\t\t\tvalue.z = 45;\n\t\t\tbreak;\n\t\tcase \"east\":\n\t\t\tvalue.z = 90;\n\t\t\tbreak;\n\t\tcase \"northeast\":\n\t\t\tvalue.z = 135;\n\t\t\tbreak;\n\t\tcase \"north\":\n\t\t\tvalue.z = 180;\n\t\t\tbreak;\n\t\tcase \"northwest\":\n\t\t\tvalue.z = 225;\n\t\t\tbreak;\n\t\tcase \"west\":\n\t\t\tvalue.z = 270;\n\t\t\tbreak;\n\t\tcase \"southwest\":\n\t\t\tvalue.z = 315;\n\t\t\tbreak;\n\t}\n\n\n\treturn value;\n}",
+				"value" : "0.00000 0.00000 0.00000"
+			},
+			"castshadow" : false,
+			"color" : 
+			{
+				"user" : "catcolor",
+				"value" : "0.00000 0.00000 0.00000"
+			},
+			"id" : 73,
+			"image" : "models/cat.json",
+			"name" : "cat",
+			"origin" : 
+			{
+				"script" : "'use strict';\n\nconst edges = [\"west\", \"northwest\", \"north\", \"northeast\", \"east\", \"southeast\", \"south\", \"southwest\"];\n\nconst setNextEdge = () => {\n\tshared.edge = edges[Math.floor(Math.random() * edges.length)];\n\t// shared.edge = \"south\";\n}\n\nconst offset = 0.3;\nconst offset_diag = 0.45 * offset;\nconst hiddenFactor = (1 + offset_diag * 1.1);\nconst hidden_diag = hiddenFactor * 0.66;\nconst show_params = {\n\ttau: 0.05,\n\tzeta: 0.5,\n\tduration: 1000\n}\nshared.iddle_params = {\n\tblink_range: 3000,\n\tnot_blink_range: 1500,\n\tblink_duration: 200,\n\tlong_blink_duration: 2000,\n\tblink_probability: 0.75\n}\nshared.hide_params = {\n\ttau: 0.05,\n\tzeta: 0.98,\n\tduration: 2000,\n\tdelay: 100\n}\n\nconst getPosition = () => {\n\tlet imageSize = thisLayer.size;\n\timageSize.x *= thisLayer.scale.x;\n\timageSize.y *= thisLayer.scale.y;\n\n\tswitch (shared.edge) {\n\t\tcase \"south\":\n\t\t\treturn {\n\t\t\t\tvisible: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2,\n\t\t\t\t\tengine.canvasSize.y/2 - shared.canvasSize.y/2 - offset * imageSize.y\n\t\t\t\t),\n\t\t\t\thidden: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2,\n\t\t\t\t\tengine.canvasSize.y/2 - shared.canvasSize.y/2 - hiddenFactor * imageSize.y\n\t\t\t\t)\n\t\t\t};\n\t\tcase \"southeast\":\n\t\t\treturn {\n\t\t\t\tvisible: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 + shared.canvasSize.x/2 + offset_diag * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2 - shared.canvasSize.y/2 - offset_diag * imageSize.y\n\t\t\t\t),\n\t\t\t\thidden: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 + shared.canvasSize.x/2 + hidden_diag * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2 - shared.canvasSize.y/2 - hidden_diag * imageSize.y\n\t\t\t\t)\n\t\t};\n\t\tcase \"east\":\n\t\t\treturn {\n\t\t\t\tvisible: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 + shared.canvasSize.x/2 + offset * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2\n\t\t\t\t),\n\t\t\t\thidden: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 + shared.canvasSize.x/2 + hiddenFactor * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2\n\t\t\t\t)\n\t\t\t};\n\t\tcase \"northeast\":\n\t\t\treturn {\n\t\t\t\tvisible: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 + shared.canvasSize.x/2 + offset_diag * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2 + shared.canvasSize.y/2 + offset_diag * imageSize.y\n\t\t\t\t),\n\t\t\t\thidden: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 + shared.canvasSize.x/2 + hidden_diag * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2 + shared.canvasSize.y/2 + hidden_diag * imageSize.y\n\t\t\t\t)\n\t\t\t};\n\t\tcase \"north\":\n\t\t\treturn {\n\t\t\t\tvisible: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2,\n\t\t\t\t\tengine.canvasSize.y/2 + shared.canvasSize.y/2 + offset * imageSize.y\n\t\t\t\t),\n\t\t\t\thidden: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2,\n\t\t\t\t\tengine.canvasSize.y/2 + shared.canvasSize.y/2 + hiddenFactor * imageSize.y\n\t\t\t\t) \n\t\t\t};\n\t\tcase \"northwest\":\n\t\t\treturn {\n\t\t\t\tvisible: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 - shared.canvasSize.x/2 - offset_diag * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2 + shared.canvasSize.y/2 + offset_diag * imageSize.y\n\t\t\t\t),\n\t\t\t\thidden: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 - shared.canvasSize.x/2 - hidden_diag * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2 + shared.canvasSize.y/2 + hidden_diag * imageSize.y\n\t\t\t\t)\n\t\t\t};\n\t\tcase \"west\":\n\t\t\treturn {\n\t\t\t\tvisible: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 - shared.canvasSize.x/2 - offset * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2\n\t\t\t\t),\n\t\t\t\thidden: new Vec3(\n\t\t\t\t\t- hiddenFactor * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2\n\t\t\t\t)\n\t\t\t};\n\t\tcase \"southwest\":\n\t\t\treturn {\n\t\t\t\tvisible: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 - shared.canvasSize.x/2 - offset_diag * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2 - shared.canvasSize.y/2 - offset_diag * imageSize.y\n\t\t\t\t),\n\t\t\t\thidden: new Vec3(\n\t\t\t\t\tengine.canvasSize.x/2 - shared.canvasSize.x/2 - hidden_diag * imageSize.x,\n\t\t\t\t\tengine.canvasSize.y/2 - shared.canvasSize.y/2 - hidden_diag * imageSize.y\n\t\t\t\t)\n\t\t\t};\n\t}\n}\n\nconst smoothStep = (min, max, t) => {\n\tif (t >= 1){\n\t\treturn max;\n\t}else if (t <= 0){\n\t\treturn min;\n\t}\n\treturn min + t * (max - min);\n}\n\nconst trajectory = (t, y1, y0=0, type = \"linear\", params={duration: 1}, initial_time = 0) => {\n\tif (type !== \"undamped\"){\n\t\tt = (t - initial_time)/params.duration;\n\t}else{\n\t\tt -= initial_time;\n\t}\n\tif (t < 0){\n\t\tt = 0;\n\t}\n\tswitch(type){\n\t\tcase \"linear\":\n\t\t\treturn smoothStep(y0, y1, t);\n\t\tcase \"ease-in-out\":\n\t\t\treturn (t < 0.5)? (\n\t\t\t\tsmoothStep(y0, y1, 2*t**2)\n\t\t\t) : (\n\t\t\t\tsmoothStep(y0, y1, 1 - 2*(1 - t)**2)\n\t\t\t);\n\t\tcase \"undamped\":\n\t\t\tconst alpha = params.zeta/params.tau;\n\t\t\tconst gamma = Math.sqrt(1-Math.pow(params.zeta,2));\n\t\t\tconst beta = gamma/params.tau;\n\t\t\treturn smoothStep(y1, y0, Math.exp(-alpha*t) * (Math.cos(beta * t) + (params.zeta/gamma) * Math.sin(beta * t)));\n\t}\n}\n\nconst move = (end_position, params, delay = 0) => {\n\tconst t = (Date.now() - shared.startTime) / 1000;\n\n\treturn new Vec3(\n\t\ttrajectory(t, end_position.x, shared.startPosition.x, \"undamped\", params, delay/1000),\n\t\ttrajectory(t, end_position.y, shared.startPosition.y, \"undamped\", params, delay/1000)\n\t)\n}\n\nconst getBlinkTime = (lingerTime = shared.iddle_params.blink_range) => { // min and max included \n\tconst min = shared.iddle_params.not_blink_range;\n\tconst max = parseInt(lingerTime) + min;\n\n\treturn Math.floor(Math.random() * (max - min + 1) + min);\n}\n\nlet blinkTime = getBlinkTime();\n\n/**\n * @param {Vec3} value - for property 'origin'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tconst position = getPosition();\n\n\tshared.iddle_params.duration = (\n\t\tshared.iddle_params.not_blink_range * 2 \n\t\t+ shared.iddle_params.blink_range \n\t\t+ shared.iddle_params.blink_duration \n\t\t+ shared.iddle_params.long_blink_duration\n\t);\n\n\tif (shared.trigger_hide && shared.stage<6 && engine.userProperties.hidesonclick){\n\t\tshared.trigger_hide = false;\n\t\tshared.startTime = Date.now();\n\t\tshared.startPosition = value;\n\t\tshared.stage = 6;\n\t}\n\n\tswitch (shared.stage){\n\t\tcase 0: // Showing\n\t\t\tvalue = move(position.visible, show_params);\n\n\t\t\tif (Date.now() - shared.startTime >= show_params.duration){\n\t\t\t\tshared.startTime = Date.now();\n\t\t\t\tshared.startPosition = value;\n\t\t\t\tblinkTime = getBlinkTime(engine.userProperties.catlingertime);\n\t\t\t\tshared.stage = 1;\n\t\t\t}\n\t\t\tbreak;\n\t\tcase 1: // Staring - before blink\n\t\t\tif (Date.now() - shared.startTime >= blinkTime){\n\t\t\t\tif (Math.random() <= shared.iddle_params.blink_probability){\n\t\t\t\t\tshared.eye_state = 1;\n\t\t\t\t}\n\t\t\t\tshared.stage = 2;\n\t\t\t}\n\t\t\tbreak;\n\t\tcase 2: // Short blink\n\t\t\tif (Date.now() - shared.startTime >= blinkTime + shared.iddle_params.blink_duration){\n\t\t\t\tshared.eye_state = 0;\n\t\t\t\tshared.stage = 3;\n\t\t\t}\n\t\t\tbreak;\n\t\tcase 3: // Long blink\n\t\t\tif (Date.now() - shared.startTime >= shared.iddle_params.duration - shared.iddle_params.long_blink_duration - shared.iddle_params.blink_duration/4){\n\t\t\t\tshared.eye_state = 1;\n\t\t\t\tshared.stage = 4;\n\t\t\t}\n\t\t\tbreak;\n\t\tcase 4: // After Long blink\n\t\t\tif (Date.now() - shared.startTime >= shared.iddle_params.duration - shared.iddle_params.blink_duration/4){\n\t\t\t\tshared.eye_state = 0;\n\t\t\t\tshared.stage = 5;\n\t\t\t}\n\t\t\tbreak;\n\t\tcase 5: // stop\n\t\t\tshared.eye_state = 0;\n\t\t\tif (Date.now() - shared.startTime >= shared.iddle_params.duration){\n\t\t\t\tshared.startTime = Date.now();\n\t\t\t\tshared.startPosition = value;\n\t\t\t\tshared.stage = 6;\n\t\t\t}\n\t\t\tbreak;\n\t\tcase 6: // Hiding\n\t\t\tshared.eye_state = 0;\n\t\t\tvalue = move(position.hidden, shared.hide_params, shared.hide_params.delay);\n\n\t\t\tif (Date.now() - shared.startTime >= shared.hide_params.duration){\n\t\t\t\tsetNextEdge();\n\t\t\t\tconst position = getPosition();\n\t\t\t\tvalue = position.hidden;\n\t\t\t\tshared.eye_state = 0;\n\n\t\t\t\tshared.startTime = Date.now();\n\t\t\t\tshared.startPosition = value;\n\t\t\t\tshared.stage = 0;\n\t\t\t}\n\t\t\tbreak;\n\t}\n\n\treturn value;\n}\n\n/**\n * @param {Vec3} value - for property 'origin'\n * @return {Vec3} - update current property value\n */\nexport function init(value) {\n\n\tsetNextEdge();\n\n\tconst position = getPosition();\n\n\tvalue.x = position.hidden.x;\n\tvalue.y = position.hidden.y;\n\n\tshared.startTime = Date.now();\n\tshared.startPosition = new Vec3(value);\n\tshared.stage = 0;\n\tshared.eye_state = 0;\n\n\treturn value;\n}\n\n",
+				"value" : "1920.00000 0.00000 0.00000"
+			},
+			"scale" : 
+			{
+				"script" : "'use strict';\n\nconst proportion = 0.85;\n\n/**\n * @param {Vec3} value - for property 'scale'\n * @return {Vec3} - update current property value\n */\nexport function init(value) {\n\tconst minSize = Math.min(shared.canvasSize.x, shared.canvasSize.y);\n\tvalue.x = minSize / thisLayer.size.x * proportion;\n\tvalue.y = minSize / thisLayer.size.y * proportion;\n\treturn value;\n}\n\n/**\n * @param {Vec3} value - for property 'scale'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tconst minSize = Math.min(shared.canvasSize.x, shared.canvasSize.y);\n\tvalue.x = minSize / thisLayer.size.x * proportion;\n\tvalue.y = minSize / thisLayer.size.y * proportion;\n\treturn value;\n}",
+				"value" : "1.00000 1.00000 1.00000"
+			},
+			"size" : "1332.00000 1332.00000"
+		},
+		{
+			"angles" : 
+			{
+				"script" : "'use strict';\n\nconst ear_position = {\n\torigin: 10, // 10\n\tmin: 35,\n\tmax: 0\n}\n\nshared.ear_params = {\n\tshow_duration: 2000,\n\ttau: 0.02,\n\tzeta: 0.5,\n}\n\n\nshared.ear_params_osci = {\n\ttau: 0.15,\n\tzeta: 0.15\n}\n\nconst smoothStep = (min, max, t) => {\n\tif (t >= 1){\n\t\treturn max;\n\t}else if (t <= 0){\n\t\treturn min;\n\t}\n\treturn min + t * (max - min);\n}\n\nconst trajectory = (t, y1, y0=0, type = \"linear\", params={duration: 1}, initial_time = 0) => {\n\tif (type !== \"undamped\" && type !== \"oscillate\"){\n\t\tt = (t - initial_time)/params.duration;\n\t\tif (t > 1){\n\t\t\tt = 1;\n\t\t}\n\t}else{\n\t\tt -= initial_time;\n\t}\n\tif (t < 0){\n\t\tt = 0;\n\t}\n\tswitch(type){\n\t\tcase \"linear\":\n\t\t\treturn smoothStep(y0, y1, t);\n\t\tcase \"ease-in-out\":\n\t\t\treturn (t < 0.5)? (\n\t\t\t\tsmoothStep(y0, y1, 2*t**2)\n\t\t\t) : (\n\t\t\t\tsmoothStep(y0, y1, 1 - 2*(1 - t)**2)\n\t\t\t);\n\t\tcase \"ease-out\":\n\t\t\treturn smoothStep(y0, y1, 1 - (1 - t)**2)\n\t\tcase \"undamped\":\n\t\t\tconst alpha = params.zeta/params.tau;\n\t\t\tconst gamma = Math.sqrt(1-Math.pow(params.zeta,2));\n\t\t\tconst beta = gamma/params.tau;\n\t\t\treturn smoothStep(y1, y0, Math.exp(-alpha*t) * (Math.cos(beta * t) + (params.zeta/gamma) * Math.sin(beta * t)));\n\t\tcase \"oscillate\":\n\t\t\tconst alphao = params.zeta/params.tau;\n\t\t\tconst gammao = Math.sqrt(1-Math.pow(params.zeta,2));\n\t\t\tconst betao = gammao/params.tau;\n\t\t\treturn smoothStep(y0, y1, Math.exp(-alphao*t) * Math.sin(betao * t));\n\t}\n}\n\n\n\n/**\n * @param {Vec3} value - for property 'angles'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tconst t = (Date.now() - shared.startTime) / 1000;\n\n\tswitch(shared.stage){\n\t\tcase 0:\n\t\t\tvalue.z = trajectory(t, ear_position.max, ear_position.origin, \"oscillate\", shared.ear_params_osci, 110/1000);\n\t\t\tbreak;\n\t\tcase 4:\n\t\t\tvalue.z = trajectory(t, ear_position.min, ear_position.origin, \"ease-out\", {\n\t\t\t\tduration: shared.ear_params.show_duration / 1000,\n\t\t\t}, (shared.iddle_params.duration - shared.iddle_params.long_blink_duration - shared.iddle_params.blink_duration/4)/1000);\n\n\t\t\tbreak;\n\t\tcase 6:\n\t\t\tvalue.z = trajectory(t, ear_position.max, value.z, \"undamped\", shared.ear_params)\n\t\t\tif (Date.now() - shared.startTime >= shared.hide_params.duration * 0.75){\n\t\t\t\tvalue.z = ear_position.origin;\n\t\t\t}\n\t\t\tbreak;\n\t}\n\t\n\treturn value;\n}\n",
+				"value" : "0.00000 0.00000 0.17453"
+			},
+			"castshadow" : false,
+			"color" : 
+			{
+				"user" : "catcolor",
+				"value" : "0.00000 0.00000 0.00000"
+			},
+			"id" : 92,
+			"image" : "models/ear_left.json",
+			"name" : "ear_left",
+			"origin" : "-113.00000 1013.00000 0.00000",
+			"parent" : 73,
+			"size" : "412.00000 536.00000"
+		},
+		{
+			"angles" : 
+			{
+				"script" : "'use strict';\n\nconst ear_position = {\n\torigin:  -5.5, //\n\tmin: -35,\n\tmax: 0\n}\nconst smoothStep = (min, max, t) => {\n\tif (t >= 1){\n\t\treturn max;\n\t}else if (t <= 0){\n\t\treturn min;\n\t}\n\treturn min + t * (max - min);\n}\n\nconst trajectory = (t, y1, y0=0, type = \"linear\", params={duration: 1}, initial_time = 0) => {\n\tif (type !== \"undamped\" && type !== \"oscillate\"){\n\t\tt = (t - initial_time)/params.duration;\n\t\tif (t > 1){\n\t\t\tt = 1;\n\t\t}\n\t}else{\n\t\tt -= initial_time;\n\t}\n\tif (t < 0){\n\t\tt = 0;\n\t}\n\tswitch(type){\n\t\tcase \"linear\":\n\t\t\treturn smoothStep(y0, y1, t);\n\t\tcase \"ease-in-out\":\n\t\t\treturn (t < 0.5)? (\n\t\t\t\tsmoothStep(y0, y1, 2*t**2)\n\t\t\t) : (\n\t\t\t\tsmoothStep(y0, y1, 1 - 2*(1 - t)**2)\n\t\t\t);\n\t\tcase \"ease-out\":\n\t\t\treturn smoothStep(y0, y1, 1 - (1 - t)**2)\n\t\tcase \"undamped\":\n\t\t\tconst alpha = params.zeta/params.tau;\n\t\t\tconst gamma = Math.sqrt(1-Math.pow(params.zeta,2));\n\t\t\tconst beta = gamma/params.tau;\n\t\t\treturn smoothStep(y1, y0, Math.exp(-alpha*t) * (Math.cos(beta * t) + (params.zeta/gamma) * Math.sin(beta * t)));\n\t\tcase \"oscillate\":\n\t\t\tconst alphao = params.zeta/params.tau;\n\t\t\tconst gammao = Math.sqrt(1-Math.pow(params.zeta,2));\n\t\t\tconst betao = gammao/params.tau;\n\t\t\treturn smoothStep(y0, y1, Math.exp(-alphao*t) * Math.sin(betao * t));\n\t}\n}\n\n\n/**\n * @param {Vec3} value - for property 'angles'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tconst t = (Date.now() - shared.startTime) / 1000;\n\n\tswitch(shared.stage){\n\t\tcase 0:\n\t\t\tvalue.z = trajectory(t, ear_position.max - ear_position.origin, ear_position.origin, \"oscillate\", shared.ear_params_osci, 110/1000);\n\t\t\tbreak;\n\t\tcase 4:\n\t\t\tvalue.z = trajectory(t, ear_position.min, ear_position.origin, \"ease-out\", {\n\t\t\t\tduration: shared.ear_params.show_duration / 1000,\n\t\t\t}, (shared.iddle_params.duration - shared.iddle_params.long_blink_duration - shared.iddle_params.blink_duration/4)/1000);\n\n\t\t\tbreak;\n\t\tcase 6:\n\t\t\tvalue.z = trajectory(t, ear_position.max, value.z, \"undamped\", shared.ear_params)\n\t\t\tif (Date.now() - shared.startTime >= shared.hide_params.duration * 0.75){\n\t\t\t\tvalue.z = ear_position.origin;\n\t\t\t}\n\t\t\tbreak;\n\t}\n\t\n\treturn value;\n}\n",
+				"value" : "0.00000 0.00000 -0.09599"
+			},
+			"castshadow" : false,
+			"color" : 
+			{
+				"user" : "catcolor",
+				"value" : "0.00000 0.00000 0.00000"
+			},
+			"id" : 96,
+			"image" : "models/ear_right.json",
+			"name" : "ear_right",
+			"origin" : "80.00000 1021.00000 0.00000",
+			"parent" : 73,
+			"size" : "416.00000 528.00000"
+		},
+		{
+			"angles" : "0.00000 -0.00000 0.00000",
+			"castshadow" : false,
+			"color" : 
+			{
+				"user" : "cateyecolor",
+				"value" : "0.25098 0.52549 0.85882"
+			},
+			"effects" : 
+			[
+				{
+					"file" : "effects/spin/effect.json",
+					"id" : 79,
+					"name" : "",
+					"passes" : 
+					[
+						{
+							"constantshadervalues" : 
+							{
+								"angle" : 0,
+								"center" : "0.5 0.5",
+								"feather" : 0.033,
+								"phase" : 1,
+								"ratio" : 1,
+								"size" : 0.25,
+								"speed" : 4
+							},
+							"id" : 80
+						}
+					],
+					"visible" : true
+				}
+			],
+			"id" : 77,
+			"image" : "models/eye_normal.json",
+			"name" : "eye_left",
+			"origin" : "-174.00000 804.00000 0.00000",
+			"parent" : 73,
+			"size" : "284.00000 284.00000",
+			"visible" : 
+			{
+				"script" : "'use strict';\n\n/**\n * @param {Boolean} value - for property 'visible'\n * @return {Boolean} - update current property value\n */\nexport function update(value) {\n\tvalue = shared.eye_state === 0;\n\treturn value;\n}\n",
+				"value" : true
+			}
+		},
+		{
+			"angles" : "0.00000 -0.00000 0.00000",
+			"castshadow" : false,
+			"color" : 
+			{
+				"user" : "cateyecolor",
+				"value" : "0.25098 0.52549 0.85882"
+			},
+			"effects" : 
+			[
+				{
+					"file" : "effects/spin/effect.json",
+					"id" : 83,
+					"name" : "",
+					"passes" : 
+					[
+						{
+							"constantshadervalues" : 
+							{
+								"angle" : 0,
+								"center" : "0.5 0.5",
+								"feather" : 0.033,
+								"phase" : 1,
+								"ratio" : 1,
+								"size" : 0.25,
+								"speed" : 4
+							},
+							"id" : 84
+						}
+					],
+					"visible" : true
+				}
+			],
+			"id" : 82,
+			"image" : "models/eye_normal.json",
+			"name" : "eye_right",
+			"origin" : "130.00000 804.00000 0.00000",
+			"parent" : 73,
+			"size" : "284.00000 284.00000",
+			"visible" : 
+			{
+				"script" : "'use strict';\n\n/**\n * @param {Boolean} value - for property 'visible'\n * @return {Boolean} - update current property value\n */\nexport function update(value) {\n\tvalue = shared.eye_state === 0;\n\treturn value;\n}\n",
+				"value" : true
+			}
+		},
+		{
+			"angles" : "0.00000 -0.00000 0.00000",
+			"castshadow" : false,
+			"color" : 
+			{
+				"user" : "cateyecolor",
+				"value" : "0.25098 0.52549 0.85882"
+			},
+			"id" : 88,
+			"image" : "models/eyes_smug.json",
+			"name" : "eyes_smug",
+			"origin" : "-30.00000 830.00000 0.00000",
+			"parent" : 73,
+			"size" : "540.00000 232.00000",
+			"visible" : 
+			{
+				"script" : "'use strict';\n\n/**\n * @param {Boolean} value - for property 'visible'\n * @return {Boolean} - update current property value\n */\nexport function update(value) {\n\tvalue = shared.eye_state === 1;\n\treturn value;\n}\n",
+				"value" : true
+			}
+		}
+	],
+	"version" : 4
+}

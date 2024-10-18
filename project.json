@@ -1,0 +1,77 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Add a playful feline to your desktop or home screen with this sneaky cat live wallpaper. He quietly appears from random spots along the edges of your screen, giving a smug look when he thinks he’s gone unnoticed. With captivating eyes and rich colors, this subtle yet enchanting dark wallpaper adds charm to your device.\n\n==============================================\n\nPort of the Android Stalker Cat live wallpaper\n\nThis version supports all the features of the original, including iteration and individual color customization.\n\nFeatures:\n\n- Dynamic resolution (Cat size and background adapt to your screen's aspect ratio without cropping, whether in landscape or portrait mode)\n- Mobile support (Android and iOS)\n- Interactive (Click/Tap to hide - can be disabled in the settings)\n- Individual color customization for all elements (background, cat body, cat eyes)\n- Customizable cat linger time (Skittish, Mildly interested, Very interested)\n\nCredits:\n\n- Creators of the original version: Anne Pätzke, Winterlight.\n- Upscale and logic (SceneScript): by me.",
+	"file" : "scene.json",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"catcolor" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "Cat Color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"cateyecolor" : 
+			{
+				"index" : 1,
+				"order" : 101,
+				"text" : "Cat Eye Color",
+				"type" : "color",
+				"value" : "0.25098039215686274 0.5254901960784314 0.8588235294117647"
+			},
+			"catlingertime" : 
+			{
+				"index" : 2,
+				"options" : 
+				[
+					{
+						"label" : "Skittish",
+						"value" : "1500"
+					},
+					{
+						"label" : "Mildy interested",
+						"value" : "3000"
+					},
+					{
+						"label" : "Very interested",
+						"value" : "5000"
+					}
+				],
+				"order" : 102,
+				"text" : "Cat Linger Time",
+				"type" : "combo",
+				"value" : "3000"
+			},
+			"hidesonclick" : 
+			{
+				"index" : 3,
+				"order" : 103,
+				"text" : "Hides on Click",
+				"type" : "bool",
+				"value" : true
+			},
+			"schemecolor" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0.18823529411764706 0.34901960784313724 0.611764705882353"
+			}
+		}
+	},
+	"preview" : "preview.gif",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"snapshotformat" : 0,
+	"snapshotoverlay" : "",
+	"tags" : [ "Animal" ],
+	"title" : "StalkerCat+ [4k]",
+	"type" : "scene",
+	"version" : 3,
+	"workshopid" : "3350454609",
+	"workshopurl" : "steam://url/CommunityFilePage/3350454609"
+}
