@@ -18,7 +18,7 @@
 
 ## Description
 
-Add a playful feline to your desktop or home screen with this sneaky cat live wallpaper. He quietly appears from random spots along the edges of your screen, giving a smug look when he thinks he’s gone unnoticed. With captivating eyes and rich colors, this subtle yet enchanting dark wallpaper adds charm to your device.
+Add a playful feline to your desktop or home screen with this sneaky cat live wallpaper. He quietly appears from random spots along the edges of your screen, giving a smug look when he thinks he’s gone unnoticed. With captivating eyes and rich colors, this subtle yet enchanting dark-themed wallpaper adds charm to your device.
 
 ---
 
