@@ -1,10 +1,20 @@
 # StalkerCat+ Live Wallpaper
 
-A beautiful dark interactive scene-based live wallpaper for Wallpaper Engine.
+<p align="center">
+<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3350454609"
+    ><img
+      alt="Logo of StalkerCat+"
+      src="preview.gif"
+  /></a>
+</p>
 
-![Stalker Cat Logo](preview.gif)
+<p align="center">
+  <em>A beautiful, dark, interactive, scene-based live wallpaper for Wallpaper Engine.</em>
+</p>
 
-**Steam workshop link**: https://steamcommunity.com/sharedfiles/filedetails/?id=3350454609
+<p align="center">
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3350454609">Get it on Steam Workshop</a> | <a href="https://store.steampowered.com/app/431960/Wallpaper_Engine/">Download Wallpaper Engine</a>
+</p>
 
 ## Description
 
