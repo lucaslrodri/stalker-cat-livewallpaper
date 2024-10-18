@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <em>A beautiful, dark, interactive, scene-based live wallpaper for Wallpaper Engine.</em>
+  <em>A beautiful, dark-themed, interactive, scene-based live wallpaper for Wallpaper Engine.</em>
 </p>
 
 <p align="center">
