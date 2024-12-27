@@ -35,6 +35,7 @@ This version supports all the features of the original, including iteration and 
 - Interactive (Click/Tap to hide - can be disabled in the settings)
 - Individual color customization for all elements (background, cat body, cat eyes)
 - Customizable cat linger time (Skittish, Mildly interested, Very interested)
+- Customizable cat size (Useful for small screens)
 
 ## Credits
 
