@@ -1,15 +1,28 @@
 {
 	"contentrating" : "Everyone",
-	"description" : "Add a playful feline to your desktop or home screen with this sneaky cat live wallpaper. He quietly appears from random spots along the edges of your screen, giving a smug look when he thinks he’s gone unnoticed. With captivating eyes and rich colors, this subtle yet enchanting dark-themed  wallpaper adds charm to your device.\n\n==============================================\n\nPort of the Android Stalker Cat live wallpaper\n\nThis version supports all the features of the original, including iteration and individual color customization.\n\nFeatures:\n\n- Dynamic resolution (Cat size and background adapt to your screen's aspect ratio without cropping, whether in landscape or portrait mode)\n- Mobile support (Android and iOS)\n- Interactive (Click/Tap to hide - can be disabled in the settings)\n- Individual color customization for all elements (background, cat body, cat eyes)\n- Customizable cat linger time (Skittish, Mildly interested, Very interested)\n- Customizable cat size (Useful for small screens)\n\nCredits:\n\n- Creators of the original version: Anne Pätzke, Winterlight.\n- Upscale and logic (SceneScript): by me.\n\nSource code (Github):\n\nhttps://github.com/lucaslrodri/stalker-cat-livewallpaper",
+	"description" : "Add a playful feline to your desktop or home screen with this sneaky cat live wallpaper. He quietly appears from random spots along the edges of your screen, giving a smug look when he thinks he’s gone unnoticed. With captivating eyes and rich colors, this subtle yet enchanting dark-themed  wallpaper adds charm to your device.\n\n==============================================\n\nPort of the Android Stalker Cat live wallpaper\n\nThis version supports all the features of the original, including iteration and customization of individual elements.\n\nFeatures:\n\n- Dynamic resolution: The cat's size and background adapt seamlessly to your screen's aspect ratio, whether in landscape or portrait mode, without cropping.\n- Mobile support: Compatible with Android devices.\n- Interactive: Click or tap to hide the cat (this feature can be disabled in the settings).\n- Extensive Customization: Personalize all elements, including the background, the cat's body, and its eyes.\n- Adjustable Linger Time: Choose how long the cat stays on-screen—Skittish, Mildly Interested, or Very Interested.\n- Customizable Cat Size: Scale the cat up for visibility on smaller screens (e.g., mobile phones) or reduce its size for larger screens.\n\n\nCredits:\n\n- Creators of the original version: Anne Pätzke, Winterlight.\n- Upscale and logic (SceneScript): by me.\n\nSource code (Github):\n\nhttps://github.com/lucaslrodri/stalker-cat-livewallpaper",
 	"file" : "scene.json",
 	"general" : 
 	{
 		"properties" : 
 		{
+			"backgroundshadow" : 
+			{
+				"fraction" : true,
+				"index" : 1,
+				"max" : 1,
+				"min" : 0,
+				"order" : 101,
+				"precision" : 3,
+				"step" : 0.01,
+				"text" : "Background Shadow",
+				"type" : "slider",
+				"value" : 1
+			},
 			"catcolor" : 
 			{
-				"index" : 4,
-				"order" : 104,
+				"index" : 6,
+				"order" : 106,
 				"text" : "Cat Color",
 				"type" : "color",
 				"value" : "0 0 0"
@@ -24,7 +37,7 @@
 			},
 			"catlingertime" : 
 			{
-				"index" : 1,
+				"index" : 2,
 				"options" : 
 				[
 					{
@@ -40,7 +53,7 @@
 						"value" : "5000"
 					}
 				],
-				"order" : 101,
+				"order" : 102,
 				"text" : "Cat Linger Time",
 				"type" : "combo",
 				"value" : "3000"
@@ -48,20 +61,31 @@
 			"catscale" : 
 			{
 				"fraction" : true,
-				"index" : 3,
+				"index" : 4,
 				"max" : 1.5,
 				"min" : 0.5,
-				"order" : 103,
+				"order" : 104,
 				"precision" : 3,
 				"step" : 0.01,
 				"text" : "Cat Scale",
 				"type" : "slider",
 				"value" : 0.85
 			},
+			"eyerotationspeed" : 
+			{
+				"fraction" : false,
+				"index" : 5,
+				"max" : 100,
+				"min" : 1,
+				"order" : 105,
+				"text" : "Eyes rotation speed",
+				"type" : "slider",
+				"value" : 25
+			},
 			"hidesonclick" : 
 			{
-				"index" : 2,
-				"order" : 102,
+				"index" : 3,
+				"order" : 103,
 				"text" : "Hides on Click",
 				"type" : "bool",
 				"value" : true
@@ -84,7 +108,7 @@
 	"tags" : [ "Animal" ],
 	"title" : "Stalker Cat - Interactive [4k]",
 	"type" : "scene",
-	"version" : 6,
+	"version" : 7,
 	"visibility" : "public",
 	"workshopid" : "3350454609",
 	"workshopurl" : "steam://url/CommunityFilePage/3350454609"

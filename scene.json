@@ -51,6 +51,29 @@
 				"user" : "schemecolor",
 				"value" : "0.18824 0.34902 0.61176"
 			},
+			"id" : 37,
+			"image" : "models/util/solidlayer.json",
+			"name" : "Sólido",
+			"origin" : "1920.00000 1080.00000 0.00000",
+			"scale" : 
+			{
+				"script" : "'use strict';\n\n/**\n * @param {Vec3} value - for property 'scale'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tvalue.x = shared.canvasSize.x/thisObject.size.x;\n\tvalue.y = shared.canvasSize.y/thisObject.size.y;\n\n\treturn value;\n}\n",
+				"value" : "1.00000 1.00000 1.00000"
+			},
+			"size" : "5120.00000 5120.00000"
+		},
+		{
+			"alpha" : 
+			{
+				"user" : "backgroundshadow",
+				"value" : 1.0
+			},
+			"castshadow" : false,
+			"color" : 
+			{
+				"user" : "schemecolor",
+				"value" : "0.18824 0.34902 0.61176"
+			},
 			"id" : 44,
 			"image" : "models/background.json",
 			"name" : "background",
@@ -131,7 +154,7 @@
 		{
 			"angles" : 
 			{
-				"script" : "'use strict';\n\n/**\n * @param {Vec3} value - for property 'angles'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tconst t = (Date.now() - shared.hiddenTime) / 20;\n\n\tconst w = 4;\n\t\n\tvalue.z = w * t;\n\t// if (value.z > 180) value.z -= 360;\n\n\t// value.z += Math.atan2(Math.sin(dt), Math.cos(dt));\n\n\treturn value;\n}\n",
+				"script" : "'use strict';\n\n/**\n * @param {Vec3} value - for property 'angles'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tconst t = (Date.now() - shared.hiddenTime) / 100 * engine.userProperties.eyerotationspeed;\n\t\n\tvalue.z = t;\n\t// if (value.z > 180) value.z -= 360;\n\n\t// value.z += Math.atan2(Math.sin(dt), Math.cos(dt));\n\n\treturn value;\n}\n",
 				"value" : "0.00000 0.00000 0.00000"
 			},
 			"castshadow" : false,
@@ -155,7 +178,7 @@
 		{
 			"angles" : 
 			{
-				"script" : "'use strict';\n\n/**\n * @param {Vec3} value - for property 'angles'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tconst t = (Date.now() - shared.hiddenTime) / 20;\n\n\tconst w = 4;\n\t\n\tvalue.z = w * t;\n\t// if (value.z > 180) value.z -= 360;\n\n\t// value.z += Math.atan2(Math.sin(dt), Math.cos(dt));\n\n\treturn value;\n}\n",
+				"script" : "'use strict';\n\n/**\n * @param {Vec3} value - for property 'angles'\n * @return {Vec3} - update current property value\n */\nexport function update(value) {\n\tconst t = (Date.now() - shared.hiddenTime) / 100 * engine.userProperties.eyerotationspeed;\n\n\tvalue.z = t;\n\t// if (value.z > 180) value.z -= 360;\n\n\t// value.z += Math.atan2(Math.sin(dt), Math.cos(dt));\n\n\treturn value;\n}\n",
 				"value" : "0.00000 -0.00000 0.00000"
 			},
 			"castshadow" : false,

@@ -28,14 +28,14 @@ This is a scene-based wallpaper written in SceneScript.
 
 ## Features
 
-This version supports all the features of the original, including iteration and individual color customization:
+This version supports all the features of the original, including iteration and customization of individual elements:
 
-- Dynamic resolution (Cat size and background adapt to your screen's aspect ratio without cropping, whether in landscape or portrait mode)
-- PC and mobile support (Android and iOS)
-- Interactive (Click/Tap to hide - can be disabled in the settings)
-- Individual color customization for all elements (background, cat body, cat eyes)
-- Customizable cat linger time (Skittish, Mildly interested, Very interested)
-- Customizable cat size (Useful for small screens)
+- Dynamic resolution: The cat's size and background adapt seamlessly to your screen's aspect ratio, whether in landscape or portrait mode, without cropping.
+- Mobile support: Compatible with Android devices.
+- Interactive: Click or tap to hide the cat (this feature can be disabled in the settings).
+- Extensive Customization: Personalize all elements, including the background, the cat's body, and its eyes.
+- Adjustable Linger Time: Choose how long the cat stays on-screen—Skittish, Mildly Interested, or Very Interested.
+- Customizable Cat Size: Scale the cat up for visibility on smaller screens (e.g., mobile phones) or reduce its size for larger screens.
 
 ## Credits
 
